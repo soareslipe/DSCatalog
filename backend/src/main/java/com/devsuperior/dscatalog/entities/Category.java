@@ -58,7 +58,7 @@ public class Category implements Serializable {
 		return createdAt;
 	}
 
-	public Instant getUpdateddAt() {
+	public Instant getUpdatedAt() {
 		return updatedAt;
 	}
 

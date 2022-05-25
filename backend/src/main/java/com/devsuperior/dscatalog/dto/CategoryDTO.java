@@ -1,6 +1,7 @@
 package com.devsuperior.dscatalog.dto;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 import com.devsuperior.dscatalog.entities.Category;
 
@@ -10,18 +11,21 @@ public class CategoryDTO implements Serializable {
 	
 	private Long id;
 	private String name;
+	private Instant createdAt;
 	
 	public CategoryDTO() {
 	}
 
-	public CategoryDTO(Long id, String name) {
+	public CategoryDTO(Long id, String name, Instant createdAt) {
 		this.id = id;
 		this.name = name;
+		this.setCreatedAt(createdAt);
 	}
 
 	public CategoryDTO(Category entity) {
 		id = entity.getId();
 		name = entity.getName(); 
+		setCreatedAt(entity.getCreatedAt());
 	}
 	
 	public Long getId() {
@@ -40,4 +44,13 @@ public class CategoryDTO implements Serializable {
 		this.name = name;
 	}
 
+	public Instant getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Instant createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	
 }
